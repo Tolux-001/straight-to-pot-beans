@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Straight To Pot Beans</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+html{scroll-behavior:smooth;}
+
+:root{
+--bg:#FFFFFF;
+--text:#5D4037;
+--text-secondary:#8D6E63;
+--accent:#5D4037;
+--glass:rgba(255,255,255,0.35);
+--border:rgba(255,255,255,0.25);
+--shadow:0 8px 32px rgba(0,0,0,0.1);
+--glow:0 0 10px rgba(93,64,55,0.6);
+}
+
+.dark-theme{
+--bg:#1A1210;
+--text:#D7CCC8;
+--text-secondary:#BCAAA4;
+--accent:#D7CCC8;
+--glass:rgba(255,255,255,0.05);
+--border:rgba(255,255,255,0.08);
+--shadow:0 8px 32px rgba(0,0,0,0.5);
+--glow:0 0 12px rgba(215,204,200,0.6);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+transition:0.3s;
+}
+
+section{
+padding:100px 20px;
+max-width:1200px;
+margin:auto;
+border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+h1,h2,h3{margin-bottom:15px;}
+
+p{color:var(--text-secondary);} 
+
+.glass{
+background:var(--glass);
+backdrop-filter:blur(12px);
+border:1px solid var(--border);
+border-radius:14px;
+box-shadow:var(--shadow);
+}
+
+.btn{
+display:inline-block;
+padding:14px 24px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+background:var(--accent);
+color:#fff;
+transition:.3s;
+box-shadow:var(--glow);
+}
+
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 0 20px rgba(93,64,55,.8);
+}
+
+header{
+position:sticky;
+top:0;
+z-index:999;
+padding:12px 20px;
+margin:10px;
+}
+
+nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:10px 20px;
+flex-wrap:wrap;
+}
+
+.logo{font-weight:700;font-size:22px;}
+
+.nav-links{display:none;gap:25px;}
+
+.nav-links a{
+text-decoration:none;
+color:var(--text);
+font-weight:500;
+font-size:18px;
+}
+
+.nav-links a:hover{color:#311811;}
+
+.toggle{
+cursor:pointer;
+padding:6px 12px;
+border-radius:20px;
+background:var(--glass);
+font-size:14px;
+}
+
+.hero{
+display:flex;
+flex-direction:column;
+gap:45px;
+align-items:center;
+text-align:center;
+}
+
+.hero img{
+width:100%;
+max-width:420px;
+border-radius:12px;
+}
+
+.values{display:flex;flex-direction:column;gap:25px;text-align:center;}
+
+.value{padding:30px;}
+
+.process-grid{display:grid;grid-template-columns:1fr;gap:25px;text-align:center;}
+
+.step{padding:25px;}
+
+.circle{
+width:50px;height:50px;border-radius:50%;margin:auto;display:flex;align-items:center;justify-content:center;font-weight:700;background:var(--accent);color:#fff;margin-bottom:10px;
+}
+
+.products{display:grid;grid-template-columns:1fr;gap:25px;}
+
+.card{padding:30px;text-align:center;transition:.4s;}
+
+.card img{width:100%;border-radius:10px;margin-bottom:15px;}
+
+.card:hover{transform:translateY(-10px) scale(1.03);} 
+
+/* CONTACT */
+.contact-box{text-align:center;padding:40px;}
+
+.social-buttons{
+margin-top:15px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.social-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+width:45px;
+height:45px;
+border-radius:50%;
+background:var(--accent);
+color:#fff;
+text-decoration:none;
+font-size:18px;
+box-shadow:var(--glow);
+transition:0.3s;
+}
+
+.social-btn i{
+font-size:20px;
+}
+
+.social-btn:hover{
+transform:scale(1.1);
+}
+
+footer{
+background:var(--glass);
+padding:50px 20px;
+text-align:center;
+}
+
+.footer-links{margin-top:10px;}
+.footer-links a{margin:0 10px;color:var(--text);text-decoration:none;}
+
+.reveal{opacity:0;transform:translateY(80px);transition:all 1.2s ease;}
+.reveal.active{opacity:1;transform:translateY(0);} 
+
+.whatsapp-float{
+position:fixed;bottom:25px;right:25px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;font-weight:600;text-decoration:none;box-shadow:0 10px 20px rgba(0,0,0,0.2);z-index:999;
+}
+
+@media(max-width:768px){
+.nav-links{display:none;}
+.hero{gap:25px;}
+}
+
+@media(min-width:1024px){
+.nav-links{display:flex;}
+.hero{flex-direction:row;text-align:left;}
+.values{flex-direction:row;}
+.process-grid{grid-template-columns:repeat(4,1fr);} 
+.products{grid-template-columns:repeat(3,1fr);} 
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="glass">
+<nav>
+<div class="logo">Straight To Pot Beans</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#process">Process</a>
+<a href="#products">Products</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div class="toggle" id="themeToggle">🌙 Dark</div>
+</nav>
+</header>
+
+<section class="hero reveal">
+<div>
+<h1>Skip The Picking.<br>Start Cooking.</h1>
+<p>Premium ready-to-cook beans. No stones. No stress. Just clean nutrition for your home.</p>
+<br>
+<a class="btn order-btn" data-product="500g">Order Your First Pack</a>
+</div>
+
+<img src="https://i.pinimg.com/1200x/55/6f/c9/556fc935537605b2b2e770acf05d40ed.jpg" alt="beans">
+</section>
+
+<section id="about" class="values reveal">
+<div class="value glass">
+<h3>100% Stone Free</h3>
+<p>Carefully sorted beans ensuring pure quality.</p>
+</div>
+
+<div class="value glass">
+<h3>Zero Stress</h3>
+<p>No picking, peeling or sorting required.</p>
+</div>
+
+<div class="value glass">
+<h3>Time Saved</h3>
+<p>Cook instantly and spend less time preparing meals.</p>
+</div>
+</section>
+
+<section id="process" class="reveal">
+<h2>The S.T.P Process</h2>
+<div class="process-grid">
+<div class="step glass"><div class="circle">1</div><h3>Raw</h3><p>Fresh beans sourced from trusted farms.</p></div>
+<div class="step glass"><div class="circle">2</div><h3>Sorted</h3><p>Impurities and stones are removed.</p></div>
+<div class="step glass"><div class="circle">3</div><h3>Machine Cleaned</h3><p>Hygienically processed and quality checked.</p></div>
+<div class="step glass"><div class="circle">4</div><h3>Sealed</h3><p>Professionally packaged ready-to-cook beans.</p></div>
+</div>
+</section>
+
+<section id="products" class="reveal">
+<h2>Choose Your Package</h2>
+<div class="products">
+
+<div class="card glass">
+<img src="images/ChatGPT 500g.png">
+<h3>500g Pack</h3>
+<p>Perfect for small households.</p>
+<br>
+<a class="btn order-btn" data-product="500g">Order</a>
+</div>
+
+<div class="card glass">
+<img src="images/Chatgpt 1kg.png">
+<h3>1kg Pack</h3>
+<p>Great for families and meal prep.</p>
+<br>
+<a class="btn order-btn" data-product="1kg">Order</a>
+</div>
+
+<div class="card glass">
+<img src="images/ChatGpt 5kg.png">
+<h3>5kg Bulk</h3>
+<p>Best for restaurants and large cooking.</p>
+<br>
+<a class="btn order-btn" data-product="5kg">Order</a>
+</div>
+
+</div>
+</section>
+
+<section id="testimonials" class="reveal">
+<h2 style="text-align:center;">What Customers Are Saying</h2>
+<div class="products">
+<div class="card glass"><p>"I've tested this product and it's amazing!"</p><h4>- Blessing A.</h4></div>
+<div class="card glass"><p>"Saved me so much time."</p><h4>- Daniel K.</h4></div>
+<div class="card glass"><p>"Very clean beans."</p><h4>- Grace M.</h4></div>
+</div>
+</section>
+
+<section id="contact" class="reveal">
+<div class="contact-box glass">
+<h2>Contact Us</h2>
+<p>Reach out or place your order easily.</p>
+<a class="btn" href="https://wa.me/2348131101004" target="_blank">Order on WhatsApp</a>
+
+<div class="social-buttons">
+<a class="social-btn" href="https://instagram.com/joshuagodsonabiodun" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a class="social-btn" href="https://www.facebook.com/joshuagodson.abiodun" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<h3>Straight To Pot Beans</h3>
+<p>Premium clean, ready-to-cook beans for smart homes.</p>
+<div class="footer-links">
+<a href="#about">About</a>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+</div>
+<p style="margin-top:15px;">© 2026 Goldcodes. All rights reserved.</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/2348131101004" target="_blank">Order</a>
+
+<script>
+
+const toggle=document.getElementById("themeToggle");
+
+if(localStorage.getItem("theme")==="dark"){
+document.body.classList.add("dark-theme");
+toggle.innerHTML="☀ Light";
+}
+
+toggle.onclick=()=>{
+document.body.classList.toggle("dark-theme");
+if(document.body.classList.contains("dark-theme")){
+toggle.innerHTML="☀ Light";
+localStorage.setItem("theme","dark");
+}else{
+toggle.innerHTML="🌙 Dark";
+localStorage.setItem("theme","light");
+}
+}
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add("active");}
+});
+});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+const phone="2348131101004";
+
+document.querySelectorAll(".order-btn").forEach(btn=>{
+btn.addEventListener("click",()=>{
+const product=btn.dataset.product;
+const message=`Hi! I want to order the ${product} package of Straight To Pot Beans`;
+window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`);
+});
+});
+
+</script>
+
+</body>
+</html>

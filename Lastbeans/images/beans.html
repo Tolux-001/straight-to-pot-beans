@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Straight To Pot Beans</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+:root{
+--bg:#FFFFFF;
+--text:#5D4037;
+--text-secondary:#8D6E63;
+--accent:#5D4037;
+--glass:rgba(255,255,255,0.35);
+--border:rgba(255,255,255,0.25);
+--shadow:0 8px 32px rgba(0,0,0,0.1);
+}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+}
+
+section{
+padding:100px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+h1,h2,h3{
+margin-bottom:15px;
+}
+
+p{
+color:var(--text-secondary);
+}
+
+.glass{
+background:var(--glass);
+backdrop-filter:blur(12px);
+border:1px solid var(--border);
+border-radius:14px;
+box-shadow:var(--shadow);
+}
+
+.btn{
+display:inline-block;
+padding:14px 24px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+background:var(--accent);
+color:#fff;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+header{
+position:sticky;
+top:0;
+z-index:999;
+padding:12px 20px;
+}
+
+nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-weight:700;
+font-size:22px;
+}
+
+.nav-links{
+display:none;
+gap:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:var(--text);
+font-weight:500;
+}
+
+.hero{
+display:flex;
+flex-direction:column;
+gap:40px;
+align-items:center;
+text-align:center;
+}
+
+.hero img{
+width:100%;
+max-width:420px;
+border-radius:12px;
+padding-left: 150px;
+}
+
+.values{
+display:flex;
+flex-direction:column;
+gap:25px;
+text-align:center;
+}
+
+.value{
+padding:25px;
+}
+
+.products{
+display:grid;
+grid-template-columns:1fr;
+gap:30px;
+}
+
+.card{
+padding:30px;
+text-align:center;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.product-img{
+width:100%;
+max-width:220px;
+margin-bottom:15px;
+border-radius:10px;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(80px);
+transition:all 1s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+.whatsapp-float{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+font-weight:600;
+text-decoration:none;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+z-index:999;
+}
+.instagram-design {
+   text-decoration: none;
+   color: #5D4037;
+   font-size: 20px;
+}
+footer{
+text-align:center;
+padding:40px 20px;
+}
+
+@media(min-width:1024px){
+
+.nav-links{
+display:flex;
+}
+
+.hero{
+flex-direction:row;
+text-align:left;
+}
+
+.values{
+flex-direction:row;
+}
+
+.products{
+grid-template-columns:repeat(3,1fr);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="glass">
+
+<nav>
+
+<div class="logo">Straight To Pot Beans</div>
+
+<div class="nav-links">
+<a href="#products">Products</a>
+<a href="#order">Order</a>
+</div>
+
+</nav>
+
+</header>
+
+
+<section class="hero reveal">
+
+<div>
+
+<h1>Skip The Picking.<br>Start Cooking.</h1>
+
+<p>Premium ready-to-cook beans. No stones. No stress.</p>
+
+<br>
+
+<a class="btn order-btn" data-product="500g">Order Your First Pack</a>
+
+</div>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4uXhHCphXBx-RwlEWDforKbxUHDXTs31TGg&s">
+
+</section>
+
+
+<section class="values reveal">
+
+<div class="value glass">
+<h3>100% Stone Free</h3>
+<p>Carefully sorted beans ensuring pure quality.</p>
+</div>
+
+<div class="value glass">
+<h3>Zero Stress</h3>
+<p>No picking required.</p>
+</div>
+
+<div class="value glass">
+<h3>Time Saved</h3>
+<p>Cook instantly and save preparation time.</p>
+</div>
+
+</section>
+
+
+<section id="products" class="reveal">
+
+<h2>Choose Your Package</h2>
+
+<div class="products">
+
+<div class="card glass">
+
+<img src="500g-pack.png" class="product-img">
+
+<h3>500g Pack</h3>
+
+<p>Perfect for small households.</p>
+
+<br>
+
+<a class="btn order-btn" data-product="500g">Order</a>
+
+</div>
+
+
+<div class="card glass">
+
+<img src="1kg-pack.png" class="product-img">
+
+<h3>1kg Pack</h3>
+
+<p>Great for families.</p>
+
+<br>
+
+<a class="btn order-btn" data-product="1kg">Order</a>
+
+</div>
+
+
+<div class="card glass">
+
+<img src="5kg-pack.png" class="product-img">
+
+<h3>5kg Bulk</h3>
+
+<p>Best for restaurants.</p>
+
+<br>
+
+<a class="btn order-btn" data-product="5kg">Order</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer id="order">
+
+<h2>Premium Cleaned Beans For Smart Families</h2>
+
+<p>Order via WhatsApp: +2348131101004</p>
+
+<p>
+<a href="https://instagram.com/joshuagodsonabiodun" target="_blank" class="insagram-design">Instagram</a>
+</p>
+
+</footer>
+
+
+<a class="whatsapp-float" href="https://wa.me/2348131101004" target="_blank">
+Order on WhatsApp
+</a>
+
+
+<script>
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+});
+});
+
+document.querySelectorAll(".reveal").forEach(el=>{
+observer.observe(el);
+});
+
+
+const phone="2348131101004";
+
+document.querySelectorAll(".order-btn").forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+const product=btn.dataset.product;
+
+const message=`Hi! I want to order the ${product} package of Straight To Pot Beans`;
+
+const url=`https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+window.open(url,"_blank");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
